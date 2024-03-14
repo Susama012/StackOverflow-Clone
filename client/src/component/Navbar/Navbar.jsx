@@ -28,7 +28,6 @@ const Navbar = () => {
                     <button className='nav-item nav-links'>Log Out</button>
                   </>
                }
-
             </div>
         </nav>
     )
