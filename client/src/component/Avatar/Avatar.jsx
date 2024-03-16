@@ -16,6 +16,6 @@ const Avatar = ({ children, bagroundColor, px, py, color, borderRadius, fontSize
             { children }
         </div>
     )
-}
+};
 
 export default Avatar

@@ -13,4 +13,4 @@ const QuestionList = ({ questionsList }) => {
   )
 }
 
-export default QuestionList
+export default QuestionList;

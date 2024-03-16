@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./HomeMainbar.css";
 import QuestionList from "./QuestionList";
 
@@ -12,43 +12,66 @@ const HomeMainbar = () => {
    const navigate = useNavigate();
 
    var questionsList = [{
-      id: 1,
-      votes: 3,
-      noOfAnswers: 2,
-      questionTitle: "What is a function?",
-      questionBody: "It meant to be",
-      questionTags: ["java" , "node js", "react js", "mongodb"],
-      userPosted: "mano",
-      askedOn: "jan 1"
-   }, {
-      id: 2,
-      votes: 0,
-      noOfAnswers: 0,
-      questionTitle: "What is a function?",
-      questionBody: "It meant to be",
-      questionTags: ["javascript", "R", "python"],
-      userPosted: "mano",
-      askedOn: "jan 1" 
-   },{
-      id: 3,
-      votes: 1,
-      noOfAnswers: 0,
-      questionTitle: "What is a function?",
-      questionBody: "It meant to be",
-      questionTags: ["javascript", "R", "python"],
-      userPosted: "mano",
-      askedOn: "jan 1"
-   }]
+      _id:1,
+      upVotes: 3,
+      downVotes: 2,
+      noOfanswers: 2,
+      questionTitle: "what is a function?",
+      questionBody: "it meant to be",
+      questionTags: ["java", "node js", "react js", "mongo db"],
+      userPosted:"mano",
+      userId: 1,
+      askedOn: "jan 1",
+      answer: [{
+        answerBody: "Answer",
+        userAnswered: "kumar",
+        answeredOn: "jan 2",
+        userId: 2,
+      }]
+    },{
+        _id: 2,
+        upVotes: 3,
+        downVotes: 2,
+        noOfanswers: 0,
+        questionTitle: "what is a function?",
+        questionBody: "it meant to be",
+        questionTags: ["javascript", "R", "python"],
+        userPosted: "mano",
+        askedOn: "jan 1",
+        userId: 1,
+        answer: [{
+            answerBody: "Answer",
+            userAnswered: "kumar",
+            answeredOn: "jan 2",
+            userId: 2,
+        }]
+    }, {
+            _id: 3,
+            upVotes: 3,
+            downVotes: 2,
+            noOfanswers: 0,
+            questionTitle: "what is a function?",
+            questionBody: "it meant to be",
+            questionTags: ["javascript", "R", "python"],
+            userPosted: "mano",
+            askedOn: "jan 1",
+            userId: 1,
+            answer: [{
+                answerBody: "Answer",
+                userAnswered: "kumar",
+                answeredOn: "jan 2",
+                userId: 2,
+            }]
+      }]
 
-
-   const checkAuth = () => {
-      if(user === null) {
-        alert("Login or Signup to ask question")
-        navigate('/Auth')
-      }else{
-         navigate('/AskQuestion')
+      const checkAuth = () => {
+         if(user === null) {
+           alert("Login or Signup to ask question")
+           navigate('/Auth')
+         }else{
+            navigate('/AskQuestion')
+         }
       }
-   }
 
    
    return(

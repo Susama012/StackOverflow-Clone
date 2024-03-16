@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.png';
 import search from '../../assets/magnifying-glass-solid.svg';
-import Avatar from '../../component/Avatar/Avatar';
+import Avatar from '../Avatar/Avatar'
 import './Navbar.css'
 
 const Navbar = () => {
