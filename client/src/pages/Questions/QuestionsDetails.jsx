@@ -4,7 +4,7 @@ import upvote from "../../assets/sort-up.svg";
 import downVote from "../../assets/sort-down.svg";
 import './Questions.css';
 import Avatar from '../../component/Avatar/Avatar';
-import DisplayAnswers from "./DisplayAnswer";
+import DisplayAnswer from './DisplayAnswer';
 
 const QuestionsDetails = () => {
     const { id } = useParams();
@@ -67,7 +67,7 @@ const QuestionsDetails = () => {
         <div className="question-details-page">
            {
             questionsList === null ? 
-            <h4>Loading...</h4> :
+            <h1>Loading...</h1> :
             <>
                {
                 questionsList.filter((question) => question._id === id).map((question) => (
@@ -95,7 +95,7 @@ const QuestionsDetails = () => {
                                   <button type="button">Delete</button>
                                 </div>
                                 <div>
-                                  <p>asked on {question.askedOn}</p>
+                                  <p>asked {question.askedOn}</p>
                                   <Link to={`/User/${question.userId}`} className="question-link" style={{color: '#0086d8'}}>
                                       <Avatar bagroundColor='orage' px='8px' py='5px'>{question.userPosted.charAt(0).toUpperCase()}</Avatar>
                                       <div>
@@ -111,7 +111,7 @@ const QuestionsDetails = () => {
                         question.noOfanswers !== 0 && (
                           <section>
                             <p>{question.noOfanswers} answers</p>
-                            <DisplayAnswers key={question._id} question={question}/>
+                            <DisplayAnswer key={question._id} question={question}/>
                           </section>
                         )
                       }
