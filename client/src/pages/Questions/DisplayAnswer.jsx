@@ -6,7 +6,7 @@ import Avatar from "../../component/Avatar/Avatar";
 const DisplayAnswer = ({question}) => {
     return(
         <div>
-           {
+           { 
             question.answer.map((ans) => (
                 <div className="display-ans" key={ans._id}>
                     <p>{ans.answerBody}</p>
@@ -17,7 +17,7 @@ const DisplayAnswer = ({question}) => {
                         </div>
                         <div>
                             <p>answer {ans.answeredOn}</p>
-                            <Link to={`/User/${question.userId}`} className="question-link" style={{color: '#0086d8'}}>
+                            <Link to={`/User/${question.userId}`} className="user-link" style={{color: '#0086d8'}}>
                                 <Avatar bagroundColor='green' px='8px' py='5px'>{ans.userAnswered.charAt(0).toUpperCase()}</Avatar>
                                     <div>
                                        {ans.userAnswered}

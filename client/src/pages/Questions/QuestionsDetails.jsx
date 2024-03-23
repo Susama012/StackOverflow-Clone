@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import upvote from "../../assets/sort-up.svg";
-import downVote from "../../assets/sort-down.svg";
+import downvote from "../../assets/sort-down.svg";
 import './Questions.css';
 import Avatar from '../../component/Avatar/Avatar';
 import DisplayAnswer from './DisplayAnswer';
@@ -14,7 +14,7 @@ const QuestionsDetails = () => {
       _id: '1',
       upVotes: 3,
       downVotes: 2,
-      noOfanswers: 2,
+      noOfAnswers: 2,
       questionTitle: "what is a function?",
       questionBody: "it meant to be",
       questionTags: ["java", "node js", "react js", "mongo db"],
@@ -31,7 +31,7 @@ const QuestionsDetails = () => {
         _id: '2',
         upVotes: 3,
         downVotes: 2,
-        noOfanswers: 0,
+        noOfAnswers: 0,
         questionTitle: "what is a function?",
         questionBody: "it meant to be",
         questionTags: ["javascript", "R", "python"],
@@ -48,7 +48,7 @@ const QuestionsDetails = () => {
             _id: '3',
             upVotes: 3,
             downVotes: 2,
-            noOfanswers: 0,
+            noOfAnswers: 0,
             questionTitle: "what is a function?",
             questionBody: "it meant to be",
             questionTags: ["javascript", "R", "python"],
@@ -78,11 +78,11 @@ const QuestionsDetails = () => {
                            <div className="question-votes">
                             <img src={upvote} alt="" width="18" className="votes-icon"/>
                             <p>{question.upVotes - question.downVotes}</p>
-                            <img src={downVote} alt=""width="18" className="votes-icon"/>
+                            <img src={downvote} alt=""width="18" className="votes-icon"/>
                            </div>
                            <div style={{style: "100%"}}>
                             <p className="question-body">{question.questionBody}</p>
-                            <div className="question-details-tag">
+                            <div className="question-details-tags">
                               {
                                 question.questionTags.map((tag) => (
                                   <p key={tag}>{tag}</p>
@@ -94,10 +94,10 @@ const QuestionsDetails = () => {
                                   <button type="button">Share</button>
                                   <button type="button">Delete</button>
                                 </div>
-                                <div>
+                                <div className="asked">
                                   <p>asked {question.askedOn}</p>
-                                  <Link to={`/User/${question.userId}`} className="question-link" style={{color: '#0086d8'}}>
-                                      <Avatar bagroundColor='orage' px='8px' py='5px'>{question.userPosted.charAt(0).toUpperCase()}</Avatar>
+                                  <Link to={`/User/${question.userId}`} className="user-link" style={{color: '#0086d8'}}>
+                                      <Avatar bagroundColor='orange' px='8px' py='5px'>{question.userPosted.charAt(0).toUpperCase()}</Avatar>
                                       <div>
                                         {question.userPosted}
                                       </div>
@@ -108,9 +108,9 @@ const QuestionsDetails = () => {
                         </div>
                       </section>
                       {
-                        question.noOfanswers !== 0 && (
+                        question.noOfAnswers !== 0 && (
                           <section>
-                            <p>{question.noOfanswers} answers</p>
+                            <p>{question.noOfAnswers} answers</p>
                             <DisplayAnswer key={question._id} question={question}/>
                           </section>
                         )
